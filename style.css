@@ -1,0 +1,39 @@
+body {
+    background-color: rgb(20, 20, 20);
+
+}
+
+p {
+    color:whitesmoke;
+
+    text-align: center;
+
+}
+
+h1 {
+    color:white;
+
+    text-align: center;
+
+}
+
+input {
+    background-color: rgb(20, 20, 20);
+    border-bottom:1px solid white;
+    border-top:0px;
+    border-left:0px;
+    border-right:0px;
+
+    color:white;
+
+}
+
+div {
+    text-align: center;
+
+}
+
+.title {
+    color:rgb(100, 100, 255);
+
+}
