@@ -3,21 +3,30 @@
     <head>
         <meta charset = "utf-8" />
 
-        <title>Hiragana Quizz</title>
+        <title>Hiragana / Katakana Reading Practise</title>
 
-        
         <link rel="stylesheet" href="style.css" />
     </head>
 
     <body>
-        <h1 class="title">Hiragana Quizz</h1>
+        <h1 class="title">Hiragana / Katakana reading practise</h1>
 
-        <p>Type in the pronounciation of this hiragana</p>
+        <p>Type in the pronounciation of this character</p>
 
         <h1 id="hiraganaText"></h1>
         
         <div>
             <input id="answer" onkeydown="formPress(this)"/>
+
+            <br />
+
+            <label>Use Hiragana</label>
+            <input type="checkbox" id="useHiraganaCheckbox"/>
+            <br />
+
+            <label>Use Katakana</label>
+            <input type="checkbox" id="useKatakanaCheckbox" />
+            <br />
 
         </div>
         

@@ -13,7 +13,25 @@ let hiragana = ["あ", "い", "え", "う", "お",
             "ら", "り", "れ", "る", "ろ",
             "わ", "を",
             "や", "ゆ", "よ",
-            "ん",];
+            "ん"];
+
+let katakana = ["ア", "イ", "エ", "ウ", "オ",
+            "タ", "チ", "テ", "ツ", "ト",
+            "ダ", "ヂ", "デ", "ド",
+            "カ", "キ", "ケ", "ク", "コ",
+            "ガ", "ギ", "ゲ", "グ", "ゴ",
+            "ハ", "ヒ", "ヘ", "フ", "ホ",
+            "バ", "ビ", "ベ", "ブ", "ボ",
+            "パ", "ピ", "ペ", "プ", "ポ",
+            "サ", "シ", "セ", "ス", "ソ",
+            "ザ", "ゼ", "ズ", "ゾ",
+            "マ", "ミ", "メ", "ム", "モ",
+            "ナ", "ニ", "ネ", "ヌ", "ノ",
+            "ラ", "リ", "レ", "ル", "ロ",
+            "ワ", "ヲ",
+            "ヤ", "ユ", "ヨ",
+            "ン"];
+
 
 
 let romaji = ["a", "i", "e", "u", "o",
@@ -45,11 +63,45 @@ let result = "";
 
 let correctCombo = 0;
 
+let useHiragana = true;
+let useKatakana = false;
+
+let isHiragana = true;
+
+let useHiraganaCheckbox = document.getElementById("useHiraganaCheckbox");
+let useKatakanaCheckbox = document.getElementById("useKatakanaCheckbox");
+
+useHiraganaCheckbox.checked = true;
+
 function formPress(ele) {
     if (event.key === "Enter") {
         
         correctCombo++;
 
+        if (useHiragana && useKatakana) {
+            if (Math.random() > .5) {
+                isHiragana = true;
+    
+            }
+    
+            else {
+                isHiragana = false;
+    
+            }
+
+        }
+
+        else if (useHiragana && !useKatakana) {
+            isHiragana = true;
+
+        }
+
+        else {
+            isHiragana = false;
+
+        }
+        
+        
         if (answerInput.value == romaji[currentHiragana]) {
             if (correctCombo > 1) {
                 result = "Correct (" + correctCombo + " times in a row)";
@@ -82,7 +134,19 @@ function formPress(ele) {
     }
 }
 setInterval( function() {
-    hiraganaText.innerHTML = hiragana[currentHiragana];
+    if (isHiragana) {
+        hiraganaText.innerHTML = hiragana[currentHiragana];
+
+    }
+
+    else {
+        hiraganaText.innerHTML = katakana[currentHiragana];
+
+    }
+
+    useHiragana = useHiraganaCheckbox.checked;
+    useKatakana = useKatakanaCheckbox.checked;
+
     resultText.innerHTML = result;
 
 }, 1);
