@@ -17,7 +17,7 @@ let hiragana = ["あ", "い", "え", "う", "お",
 
 let katakana = ["ア", "イ", "エ", "ウ", "オ",
             "タ", "チ", "テ", "ツ", "ト",
-            "ダ", "ヂ", "デ", "ド",
+            "ダ", "ジ", "デ", "ド",
             "カ", "キ", "ケ", "ク", "コ",
             "ガ", "ギ", "ゲ", "グ", "ゴ",
             "ハ", "ヒ", "ヘ", "フ", "ホ",
@@ -72,6 +72,7 @@ let useHiraganaCheckbox = document.getElementById("useHiraganaCheckbox");
 let useKatakanaCheckbox = document.getElementById("useKatakanaCheckbox");
 
 useHiraganaCheckbox.checked = true;
+useKatakanaCheckbox.checked = false;
 
 function formPress(ele) {
     if (event.key === "Enter") {
@@ -148,7 +149,7 @@ setInterval( function() {
         useHiraganaCheckbox.checked = true;
 
     }
-    
+
     useHiragana = useHiraganaCheckbox.checked;
     useKatakana = useKatakanaCheckbox.checked;
 

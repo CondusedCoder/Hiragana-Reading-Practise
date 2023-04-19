@@ -26,6 +26,17 @@ input {
 
     color:white;
 
+    text-align: center;
+
+    width:90px;
+
+    font-size:30px;
+    
+}
+
+input:focus {
+    outline:none;
+
 }
 
 div {
