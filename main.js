@@ -144,9 +144,15 @@ setInterval( function() {
 
     }
 
+    if (!useHiraganaCheckbox.checked && !useKatakanaCheckbox.checked) {
+        useHiraganaCheckbox.checked = true;
+
+    }
+    
     useHiragana = useHiraganaCheckbox.checked;
     useKatakana = useKatakanaCheckbox.checked;
 
     resultText.innerHTML = result;
+
 
 }, 1);
